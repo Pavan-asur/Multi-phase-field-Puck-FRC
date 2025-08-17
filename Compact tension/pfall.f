@@ -139,8 +139,8 @@
 		stru_m(2,2)=sin(theta)**2
 		!compute the structural tensor for the fiber
 		stru_f(1,1)=sin(theta)**2
-		stru_f(1,2)=cos(theta)*sin(theta)
-		stru_f(2,1)=cos(theta)*sin(theta)
+		stru_f(1,2)=-cos(theta)*sin(theta)!note that tthese can be also positive. negative here only implies orthogonal basis
+		stru_f(2,1)=-cos(theta)*sin(theta)
 		stru_f(2,2)=cos(theta)**2
 		
 		!transpose of the rotataion matrix
@@ -810,3 +810,4 @@ c***********************************************************************
 	   !Write(7,*)'Matrix drotInv inside loop',drotInv
 	   
       end 
+
