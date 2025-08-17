@@ -139,8 +139,8 @@
 		stru_m(2,2)=sin(theta)**2
 		!compute the structural tensor for the fiber
 		stru_f(1,1)=sin(theta)**2
-		stru_f(1,2)=cos(theta)*sin(theta)
-		stru_f(2,1)=cos(theta)*sin(theta)
+		stru_f(1,2)=-cos(theta)*sin(theta) !note that tthese can be also positive. negative here only implies orthogonal basis
+		stru_f(2,1)=-cos(theta)*sin(theta)
 		stru_f(2,2)=cos(theta)**2
 		
 		!transpose of the rotataion matrix
@@ -317,7 +317,7 @@
        
 !Compute the AMATRX for the Fiber contribution 
         amatrx(9:12,9:12)=amatrx(9:12,9:12)
-     1 +dvol*(matmul(transpose(dNdx),matmul(stru_f, dNdx))*2*Gcf*xlcf/cw 
+     1 +dvol*(matmul(transpose(dNdx),matmul(, dNdx))*2*Gcf*xlcf/cw 
      2 +matmul(dN,transpose(dN))*(Gcf/(cw*xlcf)*ddw_f+ddg_f*Hf)) !Fiber
 
 !Compute the AMATRX for the Matrix contribution     
@@ -327,7 +327,7 @@
 
 !Compute the RHS for the Fiber contribution	 
         rhs(9:12,1)=rhs(9:12,1)
-     1 -dvol*(matmul(transpose(dNdx),matmul(matmul(stru_f, dNdx),u(9:12)))*2*Gcf*xlcf/cw 
+     1 -dvol*(matmul(transpose(dNdx),matmul(matmul(, dNdx),u(9:12)))*2*Gcf*xlcf/cw 
      2 + dN(:,1)*(dg_f*Hf+ Gcf*dw_f/(cw*xlcf))) !fiber
 
 !Compute the RHS for the Matrix contribution 	 
@@ -810,3 +810,4 @@ c***********************************************************************
 	   !Write(7,*)'Matrix drotInv inside loop',drotInv
 	   
       end 
+
