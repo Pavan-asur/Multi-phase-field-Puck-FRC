@@ -16,6 +16,6 @@ If you are using this code for the academic research or industrial purpose, plea
 
 Authors: 
 
-Pavan Kumar Asur: asurpavankumar@gmail.com , pavan.kumar@tuwien.ac.at
+Pavan Kumar Asur: "Pavan-asur", pavan.kumar@tuwien.ac.at, asurpavankumar@gmail.com
 
-Aamir Dean, "aamir-dean", a.dean@isd.uni-hannover.de
+Aamir Dean: "aamir-dean", a.dean@sustech.edu, dr.aamir.dean@gmail.com
